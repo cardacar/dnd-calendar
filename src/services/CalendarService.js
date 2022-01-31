@@ -1,19 +1,22 @@
 import axios from "axios";
 import { randomColorGenerate } from "../utils/randomColorGenerate";
 
+
+//Api de la url
 const API_URL = "http://test.movilbox.co:888/test_mbox/test.php?metodo=";
 
+
+//Obtengo los usuarios de la api y le asigno un color aleatorio a cada uno
 export const getUsers = async () => {
   const response = await axios.get(`${API_URL}usuarios`);
   response.data.map((user) => {
     let color = randomColorGenerate();
     user.color = color;
-    console.log(color);
   });
-  console.log(response.data);
   return response;
 };
 
+//Obtengo el rango de fechas permitidas y filtro el mayor,el menor mes y año
 export const getTimePeriods = async () => {
   const response = await axios.get(`${API_URL}periodos`);
   let months = []
@@ -27,12 +30,11 @@ export const getTimePeriods = async () => {
     let maxYear = Math.max.apply(Math,years)
     let minYear = Math.min.apply(Math,years)
   const range = {maxMonth, minMonth, maxYear, minYear}
-  console.log(range);
   return range;
 };
 
+//Guardo la informacion
 export const saveEventInfo = async (data)=>{
     const response = await axios.post(`${API_URL}guardar`, data)
-    console.log(response)
     return response;
 }

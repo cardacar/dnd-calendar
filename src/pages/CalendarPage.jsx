@@ -5,30 +5,36 @@ import ListUsers from "../components/ListUsers";
 import SearchInput from "../components/SearchInput";
 import {getUsers, saveEventInfo} from '../services/CalendarService'
 
-
+//Pagina principal que renderiza el calendario
 
 const CalendarPage = () => {
+  //estado que guarda los eventos
   const [event, setEvent] = useState([]);
+  //Estado que controla el buscador
   const [searchInputValue, setSearchInputValue] = useState("");
+  //Estado que contiene los usuarios
   const [users, setUsers] = useState([]);
   
+  //Obtengo la informacion de los usuarios de la api
  useEffect(() => {
 
   getUsers().then(res=>setUsers(res.data))
   
   }, []);
-  
+
+  //Guardo los eventos
   const handleClickButton = ()=>{
-    console.log(event)
     saveEventInfo(event)
   }
 
+  //Obtengo la informacion del input de guardar
   const handleChangeInputValue= (e)=>{
     setSearchInputValue(e.target.value)
     
   }
 
 
+  //Renderizo la lista de usuarios, el input de busqueda y el calendario cada uno con las props necesarias
   return (
     <Grid container spacing={3} >
       <Grid item lg={3} sm={3} md={3} xs={3}>

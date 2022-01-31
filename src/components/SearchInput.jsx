@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
-
+//Boton de buscar
 const SearchInput = ({ handleChangeInputValue , searchInputValue}) => {
 
   return (

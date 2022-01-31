@@ -3,6 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 
+//COmponente que contiene el contenido de las cards de cada usuario
 
 const CardContentUser = ({user}) => {
   return (

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContentUser from "./CardContentUser";
 
-
+//Mapeo los usuarios en una lista de cards
 const ListUsers = ({users}) => {
 
 
