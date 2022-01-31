@@ -24,13 +24,25 @@ const CalendarPage = () => {
 
   //Guardo los eventos
   const handleClickButton = ()=>{
+    console.log(event)
     saveEventInfo(event)
   }
 
   //Obtengo la informacion del input de guardar
   const handleChangeInputValue= (e)=>{
     setSearchInputValue(e.target.value)
+    search(e.target.value)
+  }
+
+  const search = (termino)=>{
+    let find = users.filter((element)=>{
+      if(element.nombre.toString().toLowerCase().includes(termino.toString().toLowerCase())){
+        return element
+      }
+    })
     
+    setUsers(find)
+    //return find
   }
 
 

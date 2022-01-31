@@ -35,6 +35,14 @@ export const getTimePeriods = async () => {
 
 //Guardo la informacion
 export const saveEventInfo = async (data)=>{
-    const response = await axios.post(`${API_URL}guardar`, data)
+  const config = {
+    method: 'post',
+    url: 'http://test.movilbox.co:888/test_mbox/test.php?metodo=guardar',
+    headers: { "Conten-Type": "application/json" },
+    data : data
+  };
+    const response = await axios(config)
+
     return response;
+
 }

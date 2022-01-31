@@ -1,0 +1,21 @@
+POST http://test.movilbox.co:888/test_mbox/test.php?metodo=guardar
+Content-Type: application/json
+
+[
+    {
+        "idus": 94,
+        "fecha": "2020-12-08"
+    },
+    {
+        "idus": 94,
+        "fecha": "2020-12-09"
+    },
+    {
+        "idus": 94,
+        "fecha": "2020-12-15"
+    },
+    {
+        "idus": 97,
+        "fecha": "2020-12-16"
+    }
+]
